@@ -27,6 +27,7 @@ $primary_text: white;
 
 body {
   font-family: "Poppins", sans-serif;
+  transition: 0.3s;
   a {
     text-decoration: none;
     color: inherit;
@@ -72,6 +73,7 @@ body {
       max-width: 60%;
       margin: auto;
       padding: 2vh 0px;
+      color: $primary_color;
   }
   .btn-primary {
     border: solid 2px $primary_color;
@@ -94,7 +96,7 @@ body {
       }
     }
     .container{
-        max-width: 96%;
+        max-width: 90%;
     }
   }
 }
