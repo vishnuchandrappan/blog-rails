@@ -73,6 +73,17 @@ body {
       margin: auto;
       padding: 2vh 0px;
   }
+  .btn-primary {
+    border: solid 2px $primary_color;
+    color: $primary_color;
+    padding: 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    &:hover {
+      background-color: $primary_color;
+      color: white;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
