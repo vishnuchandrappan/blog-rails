@@ -84,6 +84,7 @@ body {
     &:hover {
       background-color: $primary_color;
       color: white;
+      animation : pulse 0.6s ease infinite alternate;
     }
   }
 }
@@ -98,5 +99,14 @@ body {
     .container{
         max-width: 90%;
     }
+  }
+}
+
+@keyframes pulse{
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.1);
   }
 }
