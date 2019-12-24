@@ -100,7 +100,6 @@ body {
         max-width: 90%;
         ul {
           overflow-x: hidden;
-          display: none;
           flex-direction: column;
           position: absolute;
           right: 0;
@@ -110,10 +109,11 @@ body {
           justify-content: space-evenly;
           align-items: center;
           width: 30vw;
+          transition: 0.6s;
+          transform: translateX(100%);
         }
         .nav-active{
-          display: flex;
-          animation: navSlide 0.6s;
+          transform: translateX(0);
         }
         .burger{
           width: 25px;
@@ -153,14 +153,5 @@ body {
   }
   to {
     transform: scale(1.1);
-  }
-}
-
-@keyframes navSlide {
-  from{
-    transform: translateX(100%);
-  }
-  to{
-    transform: translateX(0);
   }
 }
