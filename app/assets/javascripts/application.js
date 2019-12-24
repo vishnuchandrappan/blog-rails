@@ -18,11 +18,11 @@
 document.addEventListener("turbolinks:load", function() {
 
     const burger = document.querySelector('.burger');
-    const navbar = document.querySelector('nav ul');
+    // const navbar = document.querySelector('nav ul');
 
-    burger.addEventListener("click", function() {
-        burger.classList.toggle("active");
-        navbar.classList.toggle("nav-active");
-    });
+    // burger.addEventListener("click", function() {
+    //     burger.classList.toggle("active");
+    //     navbar.classList.toggle("nav-active");
+    // });
 
 });
