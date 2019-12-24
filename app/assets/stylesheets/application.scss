@@ -95,7 +95,6 @@ body {
   .btn-container {
     display: flex;
     justify-content: space-evenly;
-    margin: 10px 0;
   }
   .form-container {
     margin: 10px 0;
@@ -137,6 +136,9 @@ body {
     flex-direction: column;
     .flash-message{
       margin: 5px 0px;
+      animation: toast 3s ease-in reverse;
+      animation-timing-function: initial;
+      transform: translateY(-100vh);
     }
   }
   .alert{
@@ -225,5 +227,24 @@ body {
   }
   to {
     transform: scale(1.1);
+  }
+}
+
+@keyframes toast{
+  0%{
+    transform: translateY(20vh);
+    opacity: 0;
+  }
+  20%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  80%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-100vh);
+    opacity: 0;
   }
 }
