@@ -17,7 +17,7 @@
 
 document.addEventListener("turbolinks:load", function() {
 
-    const burger = document.querySelector('.burger');
+    // const burger = document.querySelector('.burger');
     // const navbar = document.querySelector('nav ul');
 
     // burger.addEventListener("click", function() {
