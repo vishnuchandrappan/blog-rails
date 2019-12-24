@@ -13,3 +13,16 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+
+document.addEventListener("turbolinks:load", () => {
+
+    const burger = document.querySelector('.burger');
+    const navbar = document.querySelector('nav ul');
+
+    burger.addEventListener("click", () => {
+        burger.classList.toggle("active");
+        navbar.classList.toggle("nav-active");
+    });
+
+});
