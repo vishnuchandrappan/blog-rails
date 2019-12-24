@@ -15,12 +15,12 @@
 //= require_tree .
 
 
-document.addEventListener("turbolinks:load", () => {
+document.addEventListener("turbolinks:load", function() {
 
     const burger = document.querySelector('.burger');
     const navbar = document.querySelector('nav ul');
 
-    burger.addEventListener("click", () => {
+    burger.addEventListener("click", function() {
         burger.classList.toggle("active");
         navbar.classList.toggle("nav-active");
     });
