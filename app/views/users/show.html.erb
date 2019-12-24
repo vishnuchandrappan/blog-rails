@@ -1,0 +1,11 @@
+<% provide(:title, @user.name) %>
+<%= gravatar_for @user %>
+<h3 class="page-title">
+    <%= @user.name %> <br>
+    <small><%= @user.email %></small>
+</h3>
+<div class="btns-container">
+    <button class="btn-primary">Change Password</button>
+    <button class="btn-primary">Edit Details</button>
+    <button class="btn-primary">Delete Account</button>
+</div>
