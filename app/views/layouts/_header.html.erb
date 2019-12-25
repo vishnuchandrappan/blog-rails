@@ -11,7 +11,17 @@
         <ul>
             <li><%= link_to 'Home', root_path %></li>
             <li><%= link_to 'About', about_path %></li>
-            <li><%= link_to 'Login', about_path %></li>
+            <% if  logged_in? %>
+                <li class="username">
+                    <span> <%= current_user.name %> </span>
+                    <div>
+                        <span> <%= link_to 'Profile', current_user %> </span>
+                        <span> <%= link_to 'Logout', logout_path %> </span>
+                    </div>
+                </li>
+            <% else %>
+                <li><%= link_to 'Login', login_path %></li>
+            <% end %>
         </ul>
     </nav>
 </div>

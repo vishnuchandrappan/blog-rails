@@ -25,4 +25,11 @@ document.addEventListener("turbolinks:load", function() {
         navbar.classList.toggle("nav-active");
     });
 
+
+    const username = document.querySelector('.username');
+    const userOptions = document.querySelector('.username div');
+    username.addEventListener("click", () => {
+        userOptions.classList.toggle('active');
+    })
+
 });
