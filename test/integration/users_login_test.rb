@@ -18,7 +18,8 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_template 'sessions/new'
     assert_not flash.empty?
     get root_path
-    assert_not flash.empty?
+    assert_template 'static_pages/home'
+    assert flash.empty?
   end
 
   test 'valid login followed by logout' do
