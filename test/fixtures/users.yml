@@ -3,3 +3,8 @@ vishnu:
   name: Vishnu C
   email: cvishnu70@gmail.com
   password_digest: <%= User.digest('password') %>
+
+jithin:
+  name: Jithin Das
+  email: duchess@example.gov
+  password_digest: <%= User.digest('password') %>
