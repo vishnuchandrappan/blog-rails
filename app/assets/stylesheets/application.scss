@@ -81,8 +81,9 @@ body {
             }
           }
           .active{
-            height: 80px;
+            border-radius: 3px;
             span{
+              background-color: $primary_color;
               display: block;
             }
           }
@@ -112,6 +113,24 @@ body {
       animation: pulse 0.6s ease infinite alternate;
     }
   }
+  .btn-secondary{
+    max-width: 60%;
+    margin: auto;
+    padding: 2vh 0px;
+    color: $primary_color;
+  }
+  .btn-secondary {
+    border: solid 2px rgba($primary_color,0.7);
+    color: rgba($primary_color,0.7);
+    padding: 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    &:hover {
+      background-color: rgba($primary_color,0.7);
+      color: white;
+    }
+  }
   .btn-container {
     display: flex;
     justify-content: space-evenly;
@@ -124,6 +143,12 @@ body {
     border-radius: 5px;
     .form-group {
       margin: 5px 20px;
+      small{
+        .btn-secondary{
+          float: right;
+          transform: translateY(-50px);
+        }
+      }
     }
     label {
       display: block;

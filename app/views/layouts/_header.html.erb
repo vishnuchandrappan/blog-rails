@@ -16,6 +16,7 @@
                     <span> <%= current_user.name %> </span>
                     <div>
                         <span> <%= link_to 'Profile', current_user %> </span>
+                        <span> <%= link_to 'Settings', edit_user_path(current_user) %> </span>
                         <span> <%= link_to 'Logout', logout_path, method: :delete %> </span>
                     </div>
                 </li>
