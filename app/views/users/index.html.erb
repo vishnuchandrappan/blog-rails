@@ -2,15 +2,12 @@
 <h1 class="page-title">All Users</h1>
 
 <div class="users-list">
-    <% @users.each do |user| %>
-        <% unless user == current_user %>
-            <div class="user">
-                <%= gravatar_for user, size:100 %>
-                <div><%= link_to user.name, user %></div>
-            </div>
-        <% end %>
-    <% end  %>
-    <div class="user">
+    <%= will_paginate %>
+        <% @users.each do |user| %>
+            <%= render user%>
+        <% end  %>
+    <%= will_paginate %>
+    <div class="user me">
         <%= gravatar_for current_user, size:100 %>
         <div><%= link_to "You", current_user %></div>
     </div>
