@@ -22,7 +22,13 @@
                     </div>
                 </li>
             <% else %>
-                <li><%= link_to 'Login', login_path %></li>
+                <li class="username">
+                    <span>Join</span>
+                    <div>
+                        <span> <%= link_to 'Login', login_path %></span>
+                        <span> <%= link_to 'SignUp', signup_path %> </span>
+                    </div>
+                </li>
             <% end %>
         </ul>
     </nav>
