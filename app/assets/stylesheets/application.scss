@@ -135,8 +135,17 @@ body {
         }
         div {
           padding: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: flex-start;
           a {
-            font-size: 24px;
+            font-size: 18px;
+          }
+          .btn-secondary{
+            font-size: 14px;
+            padding: 2px 3px;
+            margin:0;
           }
         }
       }
