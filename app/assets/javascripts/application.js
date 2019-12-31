@@ -19,15 +19,21 @@ document.addEventListener("turbolinks:load", () => {
 
     const burger = document.querySelector('.burger');
     const navbar = document.querySelector('nav ul');
+    const username = document.querySelector('.username');
+    const userOptions = document.querySelector('.username div');
+
+    burger.classList.remove("active");
+    navbar.classList.remove("nav-active");
+    userOptions.classList.remove('active');
 
     burger.addEventListener("click", () => {
         burger.classList.toggle("active");
         navbar.classList.toggle("nav-active");
+        if(burger.classList.contains('active')){
+            userOptions.classList.remove('active');
+        }
     });
 
-
-    const username = document.querySelector('.username');
-    const userOptions = document.querySelector('.username div');
     username.addEventListener("click", () => {
         userOptions.classList.toggle('active');
     })
