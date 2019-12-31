@@ -1,0 +1,9 @@
+<h1>Blah blah blog</h1>
+
+<p>Hi <%= @user.name %></p>
+<p>
+    Welcome to blah blah blog! Please activate your account using link below:
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
+
+</p>
