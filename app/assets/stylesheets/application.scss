@@ -171,6 +171,11 @@ body {
           border: solid 1px;
           padding: 10px;
           border-radius: 3px;
+          .post-body{
+            a{
+              border: none;
+            }
+          }
           .timestamp{
             display: block;
             text-align: center;
@@ -184,6 +189,7 @@ body {
           a {
             margin: 0;
             padding: 0;
+            border: none;
           }
           &:hover {
             background-color: rgba($primary_color, 0.2);
@@ -515,8 +521,13 @@ body {
             position: inherit;
           }
         }
-        .new-post-container{
-
+        .posts-container{
+          grid-column-start: 1;
+          .post{
+            a{
+              border:none;
+            }
+          }
         }
       }
     }

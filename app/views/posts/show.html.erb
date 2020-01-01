@@ -8,7 +8,7 @@
 <p style="margin-top:20px"><%= @post.body %></p>
 <% if current_user == @post.user %>
     <div class="btn-container">
-        <%= link_to 'Edit', '#', class:'btn-primary' %>
-        <%= link_to 'Delete', '#', class:'btn-primary' %>
+        <%= link_to 'Edit', edit_post_path, class:'btn-primary' %>
+        <%= link_to 'Delete', post_path(post), method: :delete , class:'btn-primary' %>
     </div>
 <% end %>

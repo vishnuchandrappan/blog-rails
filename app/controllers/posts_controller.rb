@@ -21,9 +21,49 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
     end
 
+    def edit
+        @post = Post.find(params[:id])
+        unless current_user == @post.user
+            redirect_to root_path
+            flash[:danger] = "Unauthorized"
+        end
+    end
+
+    def update
+        @post = Post.find(params[:id])
+        if current_user == @post.user
+            if @post.update_attributes(post_params)
+                flash[:success] = "Changes saved !"
+                redirect_to @post
+            else
+                render 'edit'
+            end
+        else
+            redirect_to root_path
+            flash[:danger] = "Unauthorized"
+        end
+    end
+
+    def destroy
+        if current_user == @post.user
+            @post = Post.find(params[:id])
+            unless current_user == @post.user
+                redirect_to root_path
+                flash[:danger] = "Unauthorized"
+            end
+            @post.destroy
+            flash[:success] = "Post deleted !"
+            redirect_to @current_user
+        else
+            redirect_to root_path
+            flash[:danger] = "Unauthorized"
+        end
+    end
+
     private
 
         def post_params
             params.require(:post).permit(:title, :body)
         end
+
 end
