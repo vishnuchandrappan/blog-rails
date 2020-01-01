@@ -1,0 +1,13 @@
+<div class="post">
+    <%# <%= link_to gravatar_for(post.user, size:100), post.user %>
+    <div>
+      <h3 class="title"><%= post.title %></h3>
+      <span class="content"><%= post.body[1..100] %>...</span>
+      <div style="display:flex;justify-content:space-between" class="timestamp">
+        <span>
+          Posted <%= time_ago_in_words(post.created_at) %> ago.
+        </span>
+        <span class="user">by <%= link_to (current_user == post.user ? 'You' : post.user.name), post.user %></span>
+      </div>
+    </div>
+</div>

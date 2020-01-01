@@ -21,3 +21,15 @@ User.create!(
       activated_at: Time.zone.now
     )
 end
+
+users = User.order(:created_at).take(4)
+5.times do
+  title = Faker::Lorem.sentence(3)
+  body = Faker::Lorem.paragraph(3)
+  users.each { |user|
+    user.posts.create!(
+      title: title,
+      body: body
+    )
+  }
+end

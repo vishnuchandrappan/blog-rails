@@ -4,8 +4,20 @@
     <%= @user.name %> <br>
     <small><%= @user.email %></small>
 </h3>
-<div class="btn-container">
+
+
+<% if @user.posts.any? %>
+    <div class="posts">
+        <small><%= @user.name %> have written <%= pluralize(@user.posts.count, 'Post') %> </small>
+        <div class="posts-container">
+            <%= render @posts %>
+        </div>
+        <%= will_paginate @posts %>
+    </div>
+<% end %>
+
+<%# <div class="btn-container">
     <button class="btn-primary">Change Password</button>
     <button class="btn-primary">Edit Details</button>
     <button class="btn-primary">Delete Account</button>
-</div>
+</div> %>

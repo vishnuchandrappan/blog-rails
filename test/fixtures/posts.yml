@@ -2,13 +2,24 @@ one:
   title: MyString
   body: MyText
   created_at: <%= 10.minutes.ago %>
+  user: vishnu
 
 two:
   title: MyString
   body: MyText
   created_at: <%= 2.hour.ago %>
+  user: vishnu
 
 most_recent:
-  title: fooBar
-  body: lorem_ipsum
+  title: mostRecent
+  body: mostRecentTitle
   created_at: <%= Time.zone.now %>
+  user: vishnu
+
+<% 30.times do |n| %>
+post_<%= n %>:
+  title: <%= Faker::Lorem.sentence(3) %>
+  body: <%= Faker::Lorem.paragraph(3) %>
+  created_at: <%= (n+1).days.ago %>
+  user: vishnu
+<% end %>
