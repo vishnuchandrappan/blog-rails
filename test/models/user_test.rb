@@ -82,4 +82,15 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember, '')
   end
 
+  test 'posts of a user should be deleted when user is destroyed' do
+    @user.save
+    @user.posts.create!(
+      title: "foobar",
+      body: "Lorem ipsum"
+    )
+    assert_difference 'Post.count', -1 do
+      @user.destroy
+    end
+  end
+
 end
