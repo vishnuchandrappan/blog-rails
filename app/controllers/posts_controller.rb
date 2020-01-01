@@ -45,8 +45,8 @@ class PostsController < ApplicationController
     end
 
     def destroy
+        @post = Post.find(params[:id])
         if current_user == @post.user
-            @post = Post.find(params[:id])
             unless current_user == @post.user
                 redirect_to root_path
                 flash[:danger] = "Unauthorized"
