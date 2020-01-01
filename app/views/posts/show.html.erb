@@ -1,0 +1,14 @@
+<% provide(:title, @post.title ) %>
+
+<h1 class="page-title" style="text-align:left"> <%= @post.title %> </h1>
+<div style="display:flex;justify-content:space-between;max-width:80%;margin:auto">
+    <small> created by <%= link_to @post.user.name, @post.user %> </small>
+    <small> <%= time_ago_in_words(@post.created_at) %> ago </small>
+</div>
+<p style="margin-top:20px"><%= @post.body %></p>
+<% if current_user == @post.user %>
+    <div class="btn-container">
+        <%= link_to 'Edit', '#', class:'btn-primary' %>
+        <%= link_to 'Delete', '#', class:'btn-primary' %>
+    </div>
+<% end %>

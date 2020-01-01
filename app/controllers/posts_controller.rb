@@ -17,6 +17,10 @@ class PostsController < ApplicationController
     def destroy
     end
 
+    def show
+        @post = Post.find(params[:id])
+    end
+
     private
 
         def post_params
