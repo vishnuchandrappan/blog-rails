@@ -1,3 +1,69 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  .container {
+    .posts {
+      display: flex;
+      flex-direction: column;
+      small {
+        text-align: center;
+        margin: 5px 0;
+      }
+      .posts-container {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: 1fr 1fr 1fr;
+        .post {
+          border: solid 1px;
+          padding: 10px;
+          border-radius: 3px;
+          .post-body {
+            a {
+              border: none;
+            }
+          }
+          .timestamp {
+            display: block;
+            text-align: center;
+            opacity: 0.7;
+            margin-top: 15 px;
+          }
+          .content {
+            margin: 10px 0;
+            text-align: justify;
+          }
+          a {
+            margin: 0;
+            padding: 0;
+            border: none;
+          }
+          &:hover {
+            background-color: rgba($primary_color, 0.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    .container {
+      .posts {
+        .posts-container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    .container {
+      .posts {
+        .posts-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+}

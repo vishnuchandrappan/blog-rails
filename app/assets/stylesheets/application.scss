@@ -10,14 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
-
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap");
-
-$primary_color: rgb(50, 51, 50);
-$primary_text: white;
+@import "./variable.scss";
+@import "./header.scss";
+@import "./static_pages.scss";
+@import "./users.scss";
+@import "./posts.scss";
 
 * {
   margin: 0;
@@ -37,222 +36,16 @@ body {
   li {
     list-style: none;
   }
-  .header {
-    background-color: $primary_color;
-    color: $primary_text;
-    height: 8vh;
-    position: sticky;
-    top:0;
-    nav {
-      max-width: 60%;
-      margin: auto;
-      height: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .logo {
-        h2 {
-          text-transform: uppercase;
-          letter-spacing: 4px;
-          transition: 0.3s;
-          &:hover {
-            color: $primary_color;
-            background-color: $primary_text;
-          }
-        }
-      }
-      ul {
-        display: flex;
-        li {
-          margin: 5px 10px;
-          border-bottom: solid 1px $primary_color;
-          &:hover {
-            border-bottom: solid 1px;
-          }
-          div {
-            height: 0vh;
-            flex-direction: column;
-            position: absolute;
-            top: 8vh;
-            background-color: rgba($primary_color, 0.9);
-            border-radius: 0 0 5px 5px;
-            transition: 0.3s;
-            span {
-              display: none;
-              padding: 5px 10px;
-            }
-          }
-          .active {
-            border-radius: 3px;
-            span {
-              background-color: $primary_color;
-              display: block;
-            }
-          }
-        }
-      }
-      .burger {
-        display: none;
-      }
-    }
-  }
   .container {
     max-width: 60%;
     margin: auto;
     padding: 2vh 0px;
     color: $primary_color;
-    .users-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      .pagination {
-        grid-column-start: 1;
-        grid-column-end: -1;
-        display: flex;
-        justify-content: space-between;
-        width: 30%;
-        margin: auto;
-        .current {
-          padding-left: 5px;
-          width: 24px;
-          height: 24px;
-          font-weight: bold;
-          margin: 5px 0px;
-        }
-      }
-      .user {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        border: solid 2px;
-        margin: 5px;
-        border-radius: 3px;
-        &:hover {
-          background-color: rgba($primary_color, 0.2);
-        }
-        .gravatar {
-          margin: 0;
-          border: none;
-          &:hover {
-            border: none;
-          }
-        }
-        div {
-          padding: 10px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          align-items: flex-start;
-          a {
-            font-size: 18px;
-          }
-          .btn-secondary {
-            font-size: 14px;
-            padding: 2px 3px;
-            margin: 0;
-          }
-        }
-      }
-      .me {
-        grid-column-start: 1;
-        grid-column-end: -1;
-      }
-    }
-    .posts {
-      display: flex;
-      flex-direction: column;
-      small {
-        text-align: center;
-        margin: 5px 0;
-      }
-      .posts-container {
-        display: grid;
-        grid-gap: 5px;
-        grid-template-columns: 1fr 1fr 1fr;
-        .post {
-          border: solid 1px;
-          padding: 10px;
-          border-radius: 3px;
-          .post-body{
-            a{
-              border: none;
-            }
-          }
-          .timestamp{
-            display: block;
-            text-align: center;
-            opacity: 0.7;
-            margin-top:15 px;
-          }
-          .content{
-            margin: 10px 0;
-            text-align: justify;
-          }
-          a {
-            margin: 0;
-            padding: 0;
-            border: none;
-          }
-          &:hover {
-            background-color: rgba($primary_color, 0.2);
-          }
-        }
-      }
-    }
-    .index-page{
-      display: grid;
-      grid-template-columns: 1fr 6fr 1fr;
-      grid-gap: 10px;
-      .user-container{
-        grid-row-start: 1;
-        grid-row-end: -1;
-        padding:10px;
-        border-radius: 5px;
-        background-color: rgba($primary_color, 0.2);
-        a {
-          margin: 0;
-          padding: 0;
-        }
-        .user-info{
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          position: sticky;
-          top:25vh;
-        }
-      }
-      .posts-container {
-        display: grid;
-        grid-gap: 5px;
-        grid-column-start: 2;
-        grid-template-columns: 1fr;
-        .post {
-          border: solid 1px;
-          padding: 10px;
-          border-radius: 3px;
-          .timestamp{
-            display: block;
-            text-align: center;
-            opacity: 0.7;
-            margin-top:5px;
-          }
-          .content{
-            margin: 10px 0;
-            text-align: justify;
-          }
-          a {
-            margin: 0;
-            padding: 0;
-          }
-          &:hover {
-            background-color: rgba($primary_color, 0.2);
-          }
-        }
-      }
-    }
-    .form-container{
-      margin:8vh 0;
-      #post_body{
+    .form-container {
+      margin: 8vh 0;
+      #post_body {
         min-height: 30vh;
-        margin:20px 0;
+        margin: 20px 0;
       }
     }
   }
@@ -398,138 +191,16 @@ body {
 
 @media screen and (max-width: 1024px) {
   body {
-    .header {
-      nav {
-        max-width: 80%;
-      }
-    }
     .container {
       max-width: 80%;
-      .users-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        .pagination {
-          width: 60%;
-          margin: auto;
-        }
-      }
-      .posts {
-        .posts-container {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-    }
-    .index-page{
-      display: grid;
-      .user-container{
-        .user-info{
-          position: inherit;
-        }
-      }
     }
   }
 }
 
 @media screen and (max-width: 768px) {
   body {
-    .header {
-      nav {
-        max-width: 90%;
-        ul {
-          overflow-x: hidden;
-          flex-direction: column;
-          position: absolute;
-          right: 0;
-          top: 8vh;
-          background-color: rgba($primary_color, 0.9);
-          height: 92vh;
-          justify-content: space-evenly;
-          align-items: center;
-          transition: 0.6s;
-          width: 0vw;
-          opacity: 0;
-          li {
-            div {
-              position: inherit;
-              border-radius: 5px;
-              span {
-                display: none;
-              }
-            }
-          }
-        }
-        .nav-active {
-          width: 30vw;
-          opacity: 1;
-        }
-        .burger {
-          width: 25px;
-          height: 25px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          span {
-            background-color: $primary_text;
-            width: 100%;
-            height: 3px;
-            transition: 0.3s;
-          }
-        }
-        .active {
-          #line1 {
-            transform: rotate(45deg) translate(4px, 6px);
-          }
-          #line2 {
-            opacity: 0;
-          }
-          #line3 {
-            transform: rotate(-45deg) translate(4px, -6px);
-          }
-        }
-      }
-    }
     .container {
       max-width: 90%;
-      margin: auto;
-      padding: 2vh 0px;
-      color: $primary_color;
-      .users-list {
-        display: grid;
-        grid-template-columns: 1fr;
-        .user {
-          display: grid;
-          grid-template-columns: 1fr 3fr;
-          border: solid 2px;
-          margin: 5px;
-          border-radius: 3px;
-        }
-        .pagination {
-          max-width: 100%;
-          transform: translateX(0);
-        }
-      }
-      .posts {
-        .posts-container {
-          grid-template-columns: 1fr;
-        }
-      }
-      .index-page{
-        display: grid;
-        grid-template-columns: 1fr;
-        .user-container{
-          .user-info{
-            position: inherit;
-          }
-        }
-        .posts-container{
-          grid-column-start: 1;
-          .post{
-            a{
-              border:none;
-            }
-          }
-        }
-      }
     }
     .btn-container {
       flex-direction: column;
@@ -541,30 +212,4 @@ body {
   }
 }
 
-@keyframes pulse {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
-}
-
-@keyframes toast {
-  0% {
-    transform: translateY(20vh);
-    opacity: 0;
-  }
-  20% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  80% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh);
-    opacity: 0;
-  }
-}
+@import "./animations.scss";

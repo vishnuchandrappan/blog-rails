@@ -1,3 +1,96 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  .container {
+    .users-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      .pagination {
+        grid-column-start: 1;
+        grid-column-end: -1;
+        display: flex;
+        justify-content: space-between;
+        width: 30%;
+        margin: auto;
+        .current {
+          padding-left: 5px;
+          width: 24px;
+          height: 24px;
+          font-weight: bold;
+          margin: 5px 0px;
+        }
+      }
+      .user {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        border: solid 2px;
+        margin: 5px;
+        border-radius: 3px;
+        &:hover {
+          background-color: rgba($primary_color, 0.2);
+        }
+        .gravatar {
+          margin: 0;
+          border: none;
+          &:hover {
+            border: none;
+          }
+        }
+        div {
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: flex-start;
+          a {
+            font-size: 18px;
+          }
+          .btn-secondary {
+            font-size: 14px;
+            padding: 2px 3px;
+            margin: 0;
+          }
+        }
+      }
+      .me {
+        grid-column-start: 1;
+        grid-column-end: -1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    .container {
+      .users-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .pagination {
+          width: 60%;
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    .container {
+      .users-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        .user {
+          display: grid;
+          grid-template-columns: 1fr 3fr;
+          border: solid 2px;
+          margin: 5px;
+          border-radius: 3px;
+        }
+        .pagination {
+          max-width: 100%;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}
