@@ -17,6 +17,7 @@
 @import "./static_pages.scss";
 @import "./users.scss";
 @import "./posts.scss";
+@import "./alerts.scss";
 
 * {
   margin: 0;
@@ -65,10 +66,6 @@ body {
   .btn-secondary {
     max-width: 60%;
     margin: auto;
-    padding: 2vh 0px;
-    color: $primary_color;
-  }
-  .btn-secondary {
     border: solid 2px rgba($primary_color, 0.7);
     color: rgba($primary_color, 0.7);
     padding: 8px;
@@ -122,37 +119,6 @@ body {
       border-radius: 5px;
       border: solid 3px $primary_color;
     }
-  }
-  .flash-messages {
-    display: flex;
-    position: absolute;
-    top: 8vh;
-    right: 10px;
-    padding: 10px;
-    flex-direction: column;
-    .flash-message {
-      margin: 5px 0px;
-      animation: toast 3s ease-in reverse;
-      animation-timing-function: initial;
-      transform: translateY(-100vh);
-    }
-  }
-  .alert {
-    padding: 10px;
-    border-radius: 3px;
-  }
-  .alert-danger {
-    background-color: rgba(rgb(231, 70, 42), 0.4);
-    border: solid 2px rgb(231, 70, 42);
-  }
-  .alert-success {
-    background-color: rgba(rgb(34, 199, 34), 0.4);
-    border: solid 2px rgb(34, 199, 34);
-  }
-  #errors {
-    padding: 10px;
-    background-color: rgba(rgb(231, 70, 42), 0.2);
-    border-radius: 3px;
   }
   .link,
   a {

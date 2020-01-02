@@ -1,0 +1,33 @@
+body {
+  .flash-messages {
+    display: flex;
+    position: absolute;
+    top: 8vh;
+    right: 10px;
+    padding: 10px;
+    flex-direction: column;
+    .flash-message {
+      margin: 5px 0px;
+      animation: toast 3s ease-in reverse;
+      animation-timing-function: initial;
+      transform: translateY(-100vh);
+    }
+  }
+  .alert {
+    padding: 10px;
+    border-radius: 3px;
+  }
+  .alert-danger {
+    background-color: rgba(rgb(231, 70, 42), 0.4);
+    border: solid 2px rgb(231, 70, 42);
+  }
+  .alert-success {
+    background-color: rgba(rgb(34, 199, 34), 0.4);
+    border: solid 2px rgb(34, 199, 34);
+  }
+  #errors {
+    padding: 10px;
+    background-color: rgba(rgb(231, 70, 42), 0.2);
+    border-radius: 3px;
+  }
+}
