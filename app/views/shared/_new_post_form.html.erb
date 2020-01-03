@@ -1,5 +1,6 @@
 <div class="form-container">
-    <%= form_for(:post, url: posts_path) do |f| %>
+    <%= render 'shared/post_errors' %>
+    <%= form_for(@post, url: posts_path) do |f| %>
         <div class="form-group">
             <%= f.text_field :title, placeholder: 'Title of the post...', class:'form-input' %>
         </div>
