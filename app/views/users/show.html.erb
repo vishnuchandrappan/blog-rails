@@ -8,7 +8,7 @@
 
 <% if @user.posts.any? %>
     <div class="posts">
-        <small><%= @user.name %> have written <%= pluralize(@user.posts.count, 'Post') %> </small>
+        <small><%= author_name(@posts.first) %> have <%= pluralize(@user.posts.count, 'Post') %> </small>
         <div class="posts-container">
             <%= render @posts %>
         </div>

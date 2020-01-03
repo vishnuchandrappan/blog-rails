@@ -2,9 +2,17 @@
     <div class="comment-details">
         <small class="time"><%= time_ago_in_words(comment.created_at) %> ago</small>
         <small class="user">
-            By
+            <i class="fa fa-user-o"></i>
             <%= link_to author_name(comment), user_path(comment.user) %>
         </small>
+        <% if current_user == comment.user %>
+            <div class="comment-menu">
+                <i class="fa fa-pencil editcomment"></i>
+                <%= link_to post_comment_path(comment.post,comment), method: :delete do %>
+                    <i class="fa fa-trash-o deletecomment"></i>
+                <% end %>
+            </div>
+        <% end %>
     </div>
     <div class="content">
         <%= comment.content %>
