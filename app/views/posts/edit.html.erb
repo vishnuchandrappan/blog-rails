@@ -3,6 +3,7 @@
 <h1 class="page-title">Edit Post</h1>
 
 <div class="form-container">
+	<%= render 'shared/post_errors' %>
 	<%= form_for(@post) do |f|  %>
 		<div class="form-group">
 			<%= f.text_field :title, class: "form-input" %>

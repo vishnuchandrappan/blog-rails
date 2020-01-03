@@ -11,6 +11,9 @@ body {
   .container {
     .page-title {
       padding: 3vh 0;
+      &:before {
+        content: "👉 ";
+      }
     }
     .index-page {
       display: grid;
@@ -53,9 +56,10 @@ body {
             margin: 10px 0;
             text-align: justify;
           }
-          a {
-            margin: 0;
-            padding: 0;
+          .btn-primary {
+            width: 80px;
+            padding: 0 5px;
+            margin: auto;
           }
           &:hover {
             background-color: rgba($primary_color, 0.2);

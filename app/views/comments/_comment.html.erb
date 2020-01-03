@@ -1,0 +1,12 @@
+<div class="comment">
+    <div class="comment-details">
+        <small class="time"><%= time_ago_in_words(comment.created_at) %> ago</small>
+        <small class="user">
+            By
+            <%= link_to author_name(comment), user_path(comment.user) %>
+        </small>
+    </div>
+    <div class="content">
+        <%= comment.content %>
+    </div>
+</div>
