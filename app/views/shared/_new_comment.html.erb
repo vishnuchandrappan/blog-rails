@@ -1,0 +1,10 @@
+<div class="form-container">
+    <%= form_for(:comment, url: post_comments_path(@post.id)) do |f| %>
+        <div class="form-group">
+            <%= f.text_field :content, placeholder: 'Express your view...', class:'form-input' %>
+        </div>
+        <div class="btn-container">
+            <%= f.submit "Comment", class: "btn-secondary" %>
+        </div>
+    <% end %>
+</div>

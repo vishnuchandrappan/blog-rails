@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
+        @comments = @post.comments.paginate(page:params[:page])
     end
 
     def edit
@@ -45,10 +46,6 @@ class PostsController < ApplicationController
     def destroy
         @post = Post.find(params[:id])
         if current_user == @post.user
-            unless current_user == @post.user
-                redirect_to root_path
-                flash[:danger] = "Unauthorized"
-            end
             @post.destroy
             flash[:success] = "Post deleted !"
             redirect_to @current_user

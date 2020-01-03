@@ -2,13 +2,31 @@
 
 <h1 class="page-title" style="text-align:left"> <%= @post.title %> </h1>
 <div style="display:flex;justify-content:space-between;max-width:80%;margin:auto">
-    <small> created by <%= link_to @post.user.name, @post.user %> </small>
+    <small> created by <%= link_to author_name(@post), @post.user %> </small>
     <small> <%= time_ago_in_words(@post.created_at) %> ago </small>
 </div>
-<p style="margin-top:20px"><%= @post.body %></p>
+<p style="margin:20px 0"><%= @post.body %></p>
+
+
 <% if current_user == @post.user %>
     <div class="btn-container">
         <%= link_to 'Edit', edit_post_path, class:'btn-primary' %>
         <%= link_to 'Delete', post_path(@post), method: :delete , class:'btn-primary' %>
     </div>
+    <hr>
 <% end %>
+
+<div class="comments-container">
+
+    <% if logged_in? %>
+        <h1>How do you feel about this post?</h1>
+        <%= render 'shared/new_comment' %>
+    <% end %>
+
+    <% if @post.comments.any? %>
+        <h1>What others say about this post</h1>
+            <%= render @comments %>
+        <%= will_paginate @comments %>
+    <% end %>
+
+</div>
