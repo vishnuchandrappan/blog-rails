@@ -2,7 +2,7 @@
   <%= link_to post ,style: 'border:none' do%>
     <div class="post-body">
       <h3 class="title"><%= post.title %></h3>
-      <span class="content"><%= post.body[1..100] %>...</span>
+      <span class="content"><%= post.body[0..100] %>...</span>
       <div style="display:flex;justify-content:space-between" class="timestamp">
         <div>
           Posted <%= time_ago_in_words(post.created_at) %> ago.

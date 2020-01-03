@@ -56,8 +56,20 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   host = 'localhost:3000'
-  # host = 'https://fast-fortress-00484.herokuapp.com/'
   config.action_mailer.default_url_options = { host: host }
+  # config.action_mailer.smtp_settings = {
+  #   :user_name => 'ef1bc773ce8f0c',
+  #   # :user_name => 'rails-blog',
+  #   :password => '86c9d9e455b935',
+  #   # :password => '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',
+  #   :address => 'smtp.mailtrap.io',
+  #   :domain => 'smtp.mailtrap.io',
+  #   # :address => 'smtp.sendgrid.net',
+  #   # :domain => 'smtp.sendgrid.net',
+  #   :port => '2525',
+  #   # :port => '465',
+  #   :authentication => :cram_md5
+  # }
   config.action_mailer.smtp_settings = {
     :user_name => 'ef1bc773ce8f0c',
     :password => '86c9d9e455b935',
