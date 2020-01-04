@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
 
     def destroy
         @comment = Comment.find(params[:id])
-        unless current_user == @comment.user
+        unless ((current_user == @comment.user) || current_user.admin?)
             redirect_to post_path(@comment.post)
             flash[:danger] = "Unauthorized"
         else
@@ -20,6 +20,26 @@ class CommentsController < ApplicationController
             @comment.destroy
             flash[:success] = "Comment deleted !"
             redirect_to post_path(@post)
+        end
+    end
+
+    def edit
+        @comment = Comment.find(params[:id])
+        unless current_user == @comment.user
+            redirect_to post_path(@comment.post)
+            flash[:danger] = "Unauthorized"
+        end
+    end
+
+    def update
+        @comment = Comment.find(params[:id])
+        unless current_user == @comment.user
+            redirect_to post_path(@comment.post)
+            flash[:danger] = "Unauthorized"
+        else
+            @comment.update_attributes(comment_params)
+            flash[:success] = "Comment Updated !"
+            redirect_to post_path(@comment.post)
         end
     end
 

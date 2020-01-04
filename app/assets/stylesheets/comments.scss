@@ -26,6 +26,9 @@ body {
         }
       }
     }
+    .animate{
+      animation: scaleUp 1s;
+    }
   }
 }
 
@@ -46,5 +49,11 @@ body {
         }
       }
     }
+  }
+}
+
+@keyframes scaleUp{
+  from{
+    transform: scale(0);
   }
 }

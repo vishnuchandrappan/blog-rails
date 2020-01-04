@@ -1,0 +1,15 @@
+<% provide(:title, "edit comment") %>
+<div class="animate">
+    <h1 class="page-title">Edit Comment</h1>
+
+    <div class="form-container">
+        <%= form_for(@comment, url:post_comment_path, method: :patch) do |f| %>
+            <div class="form-group">
+                <%= f.text_field :content, class:'form-input' %>
+            </div>
+            <div class="btn-container">
+                <%= f.submit "Update Comment", class:'btn-secondary' %>
+            </div>
+        <% end %>
+    </div>
+</div>
