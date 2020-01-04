@@ -24,7 +24,7 @@ body {
             display: block;
             text-align: center;
             opacity: 0.7;
-            margin-top: 15 px;
+            margin-top: 15px;
           }
           .content {
             margin: 10px 0;
@@ -62,6 +62,9 @@ body {
       .posts {
         .posts-container {
           grid-template-columns: 1fr;
+          .post {
+
+          }
         }
       }
     }

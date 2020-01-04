@@ -24,7 +24,7 @@ body {
         grid-row-end: -1;
         padding: 10px;
         border-radius: 5px;
-        background-color: rgba($primary_color, 0.2);
+        // background-color: rgba($primary_color, 0.2);
         a {
           margin: 0;
           padding: 0;
@@ -35,6 +35,9 @@ body {
           align-items: center;
           position: sticky;
           top: 25vh;
+        }
+        div{
+          text-align: center;
         }
       }
       .posts-container {
@@ -62,6 +65,13 @@ body {
           &:hover {
             background-color: rgba($primary_color, 0.2);
           }
+          .post-body{
+            .btn-container {
+              border-top: solid 1px silver;
+              padding-top: 10px;
+              flex-direction: row;
+            }
+          }
         }
       }
     }
@@ -79,7 +89,6 @@ body {
         display: grid;
         .user-container {
           .user-info {
-            position: inherit;
           }
         }
       }
@@ -96,6 +105,22 @@ body {
         .user-container {
           .user-info {
             position: inherit;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            a{
+              grid-row-start: 1;
+              grid-row-end: 4;
+              border: none;
+              .gravatar{
+                margin: 0;
+                padding: 0;
+              }
+            }
+            div{
+              a{
+                border-bottom: solid gray;
+              }
+            }
           }
         }
         .posts-container {

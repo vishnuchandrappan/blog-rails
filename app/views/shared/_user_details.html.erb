@@ -1,9 +1,10 @@
 <div class="user-info">
     <%= link_to gravatar_for(current_user, size:120), current_user %>
     <h2><%= current_user.name %></h2>
-    <div><%= link_to 'Profile', current_user %></div>
-    <div><%= pluralize(current_user.posts.count, "Post") %></div>
-
+    <div>
+        <%= link_to 'Profile', current_user %>
+        <div><%= pluralize(current_user.posts.count, "Post") %></div>
+    </div>
     <div style="margin-top:30px">
         <%= link_to 'New Post', new_post_path %>
     </div>
