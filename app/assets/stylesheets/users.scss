@@ -24,6 +24,8 @@ body {
         border: solid 2px;
         margin: 5px;
         border-radius: 3px;
+        border:none;
+        box-shadow: 0px 2px 5px gray;
         &:hover {
           background-color: rgba($primary_color, 0.2);
         }
@@ -85,6 +87,7 @@ body {
           border: solid 2px;
           margin: 5px;
           border-radius: 3px;
+          border:none;
         }
         .pagination {
           max-width: 100%;

@@ -1,6 +1,5 @@
 <% provide(:title, @post.title ) %>
-
-<h1 class="page-title" style="text-align:left"> <%= @post.title %> </h1>
+<h1 class="page-title post-title" style="text-align:left"> <%= @post.title %> </h1>
 <div style="display:flex;justify-content:space-between;max-width:80%;margin:auto">
     <small> created by <%= link_to author_name(@post), @post.user %> </small>
     <small> <%= time_ago_in_words(@post.created_at) %> ago </small>

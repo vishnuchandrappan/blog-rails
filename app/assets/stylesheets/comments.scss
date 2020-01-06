@@ -1,7 +1,7 @@
 body {
   .container {
     .comments-container {
-      background-color: rgba($primary_color, 0.1);
+      // background-color: rgba($primary_color, 0.1);
       padding: 10px;
       margin: 10px 0;
       .comment {
@@ -25,6 +25,19 @@ body {
           }
         }
       }
+      .form-container{
+        form{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          .form-group{
+            flex:4;
+          }
+          .btn-container{
+            flex:1;
+          }
+        }
+      }
     }
     .animate{
       animation: scaleUp 1s;
@@ -36,6 +49,14 @@ body {
   body {
     .container {
       .comments-container {
+        .form-container{
+          form{
+            flex-direction: column;
+            .btn-container{
+              width: 70%;
+            }
+          }
+        }
         .comment {
           max-width: 90%;
           .content {
@@ -56,4 +77,18 @@ body {
   from{
     transform: scale(0);
   }
+}
+
+.post-title{
+  background-image: url('https://picsum.photos/400/200');
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-shadow: 0px 5px 20px wheat;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
