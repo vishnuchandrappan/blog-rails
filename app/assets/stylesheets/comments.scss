@@ -24,6 +24,32 @@ body {
             }
           }
         }
+        .comment-options{
+          display: flex;
+          justify-content: space-evenly;
+          border-bottom: solid 1px;
+          border-left: solid 1px;
+          border-right: solid 1px;
+          border-radius: 5px;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+        .form-container{
+          margin: 0;
+          background-color: transparent;
+          display: none;
+        }
+        .comment{
+          max-width: 90%;
+        }
+        .reply-container{
+          display: none;
+          margin-bottom:20px;
+        }
+        .comment-active{
+          display: block;
+          animation: slideDown 0.3s ease-out;
+        }
       }
       .form-container{
         form{
@@ -76,6 +102,13 @@ body {
 @keyframes scaleUp{
   from{
     transform: translateX(100vw);
+  }
+}
+
+@keyframes slideDown{
+  from{
+    transform: translateY(-50px);
+    opacity: 0;
   }
 }
 

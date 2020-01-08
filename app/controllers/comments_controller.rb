@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   before_action :correct_user, only: %i[edit update]
 
   def create
+    # render json: params
     @commentable.comments.build(comment_params)
     if @commentable.save
       flash[:success] = 'Comment created!'

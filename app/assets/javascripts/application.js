@@ -38,4 +38,19 @@ document.addEventListener("turbolinks:load", () => {
         userOptions.classList.toggle('active');
     })
 
+
+    const replies = document.querySelectorAll('.comment .comment-options .reply-btn');
+    replies.forEach(reply => {
+        reply.addEventListener("click", () => {
+            reply.parentElement.nextElementSibling.nextElementSibling.classList.toggle('comment-active');
+        })
+    });
+
+    const newReplies = document.querySelectorAll('.comment .comment-options .new-reply-btn');
+    newReplies.forEach(reply => {
+        reply.addEventListener("click", () => {
+            reply.parentElement.nextElementSibling.classList.toggle('comment-active');
+        })
+    });
+
 });

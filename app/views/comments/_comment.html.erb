@@ -1,4 +1,4 @@
-<div class="comment">
+<div class="comment"> <!-- comment body-->
     <div class="comment-details">
         <small class="time">
             <%= time_ago_in_words(comment.created_at) %>
@@ -26,13 +26,31 @@
     <div class="content">
         <%= comment.content %>
     </div>
-</div>
-<% if comment.comments.any? %>
-    <div class="comment" style="margin-right:15%;padding:0;background:transparent">
-        <div class="comment-options">
-            <span><%= pluralize(comment.comments.count,'reply') %></span>
-            <span></span>
-        </div>
-        <%= render comment.comments %>
+</div><!-- comment body ends-->
+
+<!-- comment options -->
+<div class="comment" style="margin-right:15%;padding:0;background:transparent">
+    <% unless (comment.commentable_type == 'Comment' )%>                                 <!--to avoid reply to replies -->
+    <div class="comment-options">
+        <span class="reply-btn"><%= pluralize(comment.comments.count,'reply') %></span>
+        <span class="new-reply-btn"> leave a <i class="fa fa-comment"></i> </span>
     </div>
-<% end %>
+    <% end %>
+
+    <div class="form-container">
+        <%= form_for(:comment, url: comment_comments_path(comment)) do |f| %>
+            <div class="form-group">
+                <%= f.text_field :content, placeholder: 'Express your view...', class:'form-input' %>
+            </div>
+            <div class="btn-container">
+                <%= f.submit "Comment", class: "btn-secondary" %>
+            </div>
+        <% end %>
+    </div>
+
+    <div class="reply-container">
+        <% if comment.comments.any? %>
+            <%= render comment.comments %>
+        <% end %>
+    </div>
+</div>
