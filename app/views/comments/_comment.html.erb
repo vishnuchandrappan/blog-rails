@@ -8,20 +8,31 @@
             <i class="fa fa-user-o"></i>
             <%= link_to author_name(comment), user_path(comment.user) %>
         </small>
-        <% if((current_user == comment.user) || current_user.admin?) %>
-            <div class="comment-menu">
-              <% unless current_user.admin? %>
-                <%= link_to edit_post_comment_path(comment.post, comment) do %>
-                    <i class="fa fa-pencil editcomment"></i>
+        <% if logged_in? %>
+            <% if((current_user == comment.user) || current_user.admin?) %>
+                <div class="comment-menu">
+                <% unless current_user.admin? %>
+                    <%= link_to get_edit_comment(comment) do %>
+                        <i class="fa fa-pencil editcomment"></i>
+                    <% end %>
                 <% end %>
-              <% end %>
-                <%= link_to post_comment_path(comment.post, comment), method: :delete, data: {confirm: "Are you sure?"} do %>
-                    <i class="fa fa-trash-o deletecomment"></i>
-                <% end %>
-            </div>
+                    <%= link_to get_comment(comment), method: :delete, data: {confirm: "Are you sure?"} do %>
+                        <i class="fa fa-trash-o deletecomment"></i>
+                    <% end %>
+                </div>
+            <% end %>
         <% end %>
     </div>
     <div class="content">
         <%= comment.content %>
     </div>
 </div>
+<% if comment.comments.any? %>
+    <div class="comment" style="margin-right:15%;padding:0;background:transparent">
+        <div class="comment-options">
+            <span><%= pluralize(comment.comments.count,'reply') %></span>
+            <span></span>
+        </div>
+        <%= render comment.comments %>
+    </div>
+<% end %>

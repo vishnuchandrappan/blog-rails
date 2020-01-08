@@ -40,7 +40,7 @@ body {
       }
     }
     .animate{
-      animation: scaleUp 1s;
+      animation: scaleUp 0.3s;
     }
   }
 }
@@ -75,7 +75,7 @@ body {
 
 @keyframes scaleUp{
   from{
-    transform: scale(0);
+    transform: translateX(100vw);
   }
 }
 
