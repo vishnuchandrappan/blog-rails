@@ -11,7 +11,7 @@
         <% if logged_in? %>
             <% if((current_user == comment.user) || current_user.admin?) %>
                 <div class="comment-menu">
-                <% unless current_user.admin? %>
+                <% unless current_user.admin? && current_user!=comment.user %>
                     <%= link_to get_edit_comment(comment) do %>
                         <i class="fa fa-pencil editcomment"></i>
                     <% end %>
