@@ -33,6 +33,9 @@ body {
           border-radius: 5px;
           border-top-left-radius: 0;
           border-top-right-radius: 0;
+          span{
+            cursor: pointer;
+          }
         }
         .form-container{
           margin: 0;
@@ -50,6 +53,12 @@ body {
           display: block;
           animation: slideDown 0.3s ease-out;
         }
+      }
+      .sub-options{
+        display: block;
+        margin: auto;
+        padding:0;
+        background:transparent;
       }
       .form-container{
         form{
